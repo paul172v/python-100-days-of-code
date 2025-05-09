@@ -1,4 +1,4 @@
-coins = [0.01, 0.05, 0.10, 0.25]
+#### Coins - 0.01, 0.05, 0.10, 0.25
 
 resources = {"water": 300, "milk": 200, "coffee": 100}
 
@@ -39,7 +39,7 @@ def process_coins(drink):
         change = total_tally - price
         print(f"Here is your {drink} with ${change} in change.")
         print(
-            f"The following resources are available...\nwater: {resources['water']}ml\nmilk {resources['milk']}ml\ncoffee {resources['coffee']}g"
+            f"The following resources are available...\nwater: {resources['water']}ml\nmilk {resources['milk']}ml\ncoffee {resources['coffee']}g\n"
         )
 
 
