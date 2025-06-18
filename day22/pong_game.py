@@ -1,4 +1,5 @@
 from turtle import Screen
+import random
 from paddle import Paddle
 from ball import Ball
 from game_over import GameOver
@@ -51,18 +52,22 @@ while game_is_on:
     ### Ball bouncing off of paddles
     ## Towards right paddle
     if ball.distance(right_paddle) < 50 and ball.xcor() >= 270:
-        if ball.direction == "initial-up-right" or ball.direction == "up-right":
-            ball.move_down_left()
+        direction = ["down_left", "up_left"]
+        direction_choice = random.choice(direction)
 
-        else:
+        if direction_choice == "down_left":
+            ball.move_down_left()
+        elif direction_choice == "up_left":
             ball.move_up_left()
 
     ## Towards left paddle
     if ball.distance(left_paddle) < 50 and ball.xcor() <= -270:
-        if ball.direction == "up-left":
-            ball.move_down_right()
+        direction = ["down_right", "up_right"]
+        direction_choice = random.choice(direction)
 
-        else:
+        if direction_choice == "down_right":
+            ball.move_down_right()
+        elif direction_choice == "up_right":
             ball.move_up_right()
 
     ### Ball collides with left or right wall
