@@ -9,12 +9,12 @@ from dotenv import load_dotenv
 load_dotenv()
 
 
-api_key = "ad741e536311f095e3a395f6e899040c"
+api_key = os.getenv("WEATHER_API_KEY")
 
 weather_params = {
     "lat": 56.619640,
     "lon": -3.864780,
-    "appid": "ad741e536311f095e3a395f6e899040c",
+    "appid": os.getenv("WEATHER_API_KEY"),
     "cnt": 4,
 }
 
@@ -56,7 +56,5 @@ for i in range(0, 4):
             f"{parse(weather_data["list"][i]['dt_txt']).hour:02}:00 - Umbrella not needed"
         )
 
-
-### https://api.openweathermap.org/data/2.5/forecast?lat=56.619640&lon=-3.864780&appid=ad741e536311f095e3a395f6e899040c
 
 ### Can use pythonanywhere to have a remote server that automatically executed .py files at specific times
